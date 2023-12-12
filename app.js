@@ -32,15 +32,14 @@ io.on('connection', (socket) => {
     socket.on('notification', (data) => {
         // Prepare data for table insertion for orders.
         console.log("data", data);
-        let notification = {
-            user_id: data.item_id,
-            item_name: data.item_name,
-            item_type: data.item_type,
-            item_date: data.item_date,
-            item_time: data.item_time,
-            item_location: data.item_location,
-            item_imagen: data.item_imagen,
-        };
+
+        const notification = {
+            type: data.type,
+            date: data.date,
+            time: data.time,
+            videoUrl: data.videoUrl,
+            user_id: data.user_id,
+        }
 
         console.log(notification);
 
